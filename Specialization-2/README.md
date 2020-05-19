@@ -1,0 +1,1 @@
+This folder contains the recoded assignment from specialization 2 of Deeplearning.ai course by Andrew Ng. 
