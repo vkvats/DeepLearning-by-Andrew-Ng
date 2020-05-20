@@ -18,7 +18,7 @@ def plot_decision_boundary(model, X, y):
     plt.contourf(xx, yy, Z, cmap=plt.cm.Spectral)
     plt.ylabel('x2')
     plt.xlabel('x1')
-    plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
+    plt.scatter(X[0, :], X[1, :], c=np.squeeze(y), cmap=plt.cm.Spectral)
     
 
 def sigmoid(x):
@@ -64,3 +64,10 @@ def load_extra_datasets():
     no_structure = np.random.rand(N, 2), np.random.rand(N, 2)
     
     return noisy_circles, noisy_moons, blobs, gaussian_quantiles, no_structure
+
+
+
+
+
+
+

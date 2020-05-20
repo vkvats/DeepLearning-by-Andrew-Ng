@@ -18,40 +18,40 @@ def load_2D_dataset():
     
     return train_X, train_Y, test_X, test_Y
     
-def load_planar_dataset(randomness, seed):
+# def load_planar_dataset(randomness, seed):
     
-    np.random.seed(seed)
+#     np.random.seed(seed)
     
-    m = 50
-    N = int(m/2) # number of points per class
-    D = 2 # dimensionality
-    X = np.zeros((m,D)) # data matrix where each row is a single example
-    Y = np.zeros((m,1), dtype='uint8') # labels vector (0 for red, 1 for blue)
-    a = 2 # maximum ray of the flower
+#     m = 50
+#     N = int(m/2) # number of points per class
+#     D = 2 # dimensionality
+#     X = np.zeros((m,D)) # data matrix where each row is a single example
+#     Y = np.zeros((m,1), dtype='uint8') # labels vector (0 for red, 1 for blue)
+#     a = 2 # maximum ray of the flower
 
-    for j in range(2):
+#     for j in range(2):
         
-        ix = range(N*j,N*(j+1))
-        if j == 0:
-            t = np.linspace(j, 4*3.1415*(j+1),N) #+ np.random.randn(N)*randomness # theta
-            r = 0.3*np.square(t) + np.random.randn(N)*randomness # radius
-        if j == 1:
-            t = np.linspace(j, 2*3.1415*(j+1),N) #+ np.random.randn(N)*randomness # theta
-            r = 0.2*np.square(t) + np.random.randn(N)*randomness # radius
+#         ix = range(N*j,N*(j+1))
+#         if j == 0:
+#             t = np.linspace(j, 4*3.1415*(j+1),N) #+ np.random.randn(N)*randomness # theta
+#             r = 0.3*np.square(t) + np.random.randn(N)*randomness # radius
+#         if j == 1:
+#             t = np.linspace(j, 2*3.1415*(j+1),N) #+ np.random.randn(N)*randomness # theta
+#             r = 0.2*np.square(t) + np.random.randn(N)*randomness # radius
             
-        X[ix] = np.c_[r*np.cos(t), r*np.sin(t)]
-        Y[ix] = j
+#         X[ix] = np.c_[r*np.cos(t), r*np.sin(t)]
+#         Y[ix] = j
         
-    X = X.T
-    Y = Y.T
+#     X = X.T
+#     Y = Y.T
 
-    return X, Y
+#     return X, Y
     
 def load_planar_dataset(seed):
     
     np.random.seed(seed)
     
-    m = 400 # number of examples
+    m = 1000 # number of examples
     N = int(m/2) # number of points per class
     D = 2 # dimensionality
     X = np.zeros((m,D)) # data matrix where each row is a single example
